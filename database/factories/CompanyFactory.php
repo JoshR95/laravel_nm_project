@@ -14,7 +14,7 @@ class CompanyFactory extends Factory
         return [
             'name' => $this->faker->company(),
             'email' => $this->faker->unique()->companyEmail(),
-            'logo' => null, // We'll leave this null for now as it requires file handling
+            'logo' => "https://picsum.photos/seed/" . $this->faker->unique()->uuid . "/100/100",
             'website' => $this->faker->url(),
             'created_at' => now(),
             'updated_at' => now(),

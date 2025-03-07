@@ -35,7 +35,11 @@
                             @if($company->logo)
                                 <div class="mt-2 mb-2">
                                     <p class="text-sm text-gray-500 dark:text-gray-400 mb-1">Current Logo:</p>
-                                    <img src="{{ asset('storage/' . $company->logo) }}" alt="{{ $company->name }} Logo" class="h-20 w-20 object-cover">
+                                    @if(Str::startsWith($company->logo, 'http'))
+                                        <img src="{{ $company->logo }}" alt="{{ $company->name }} Logo" class="h-20 w-20 object-cover">
+                                    @else
+                                        <img src="{{ asset('storage/' . $company->logo) }}" alt="{{ $company->name }} Logo" class="h-20 w-20 object-cover">
+                                    @endif
                                 </div>
                             @endif
                             

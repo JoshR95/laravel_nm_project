@@ -9,7 +9,7 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         $this->call([
-            // AdminUserSeeder::class, // Commented out to avoid unique constraint violation
+            AdminUserSeeder::class,
             CompanySeeder::class,
             EmployeeSeeder::class
         ]);

@@ -38,7 +38,11 @@
                                         <td class="px-6 py-4 whitespace-nowrap border-b border-gray-300 dark:border-gray-600">{{ $company->id }}</td>
                                         <td class="px-6 py-4 whitespace-nowrap border-b border-gray-300 dark:border-gray-600">
                                             @if($company->logo)
-                                                <img src="{{ asset('storage/' . $company->logo) }}" alt="{{ $company->name }} Logo" class="h-10 w-10 object-cover">
+                                                @if(Str::startsWith($company->logo, 'http'))
+                                                    <img src="{{ $company->logo }}" alt="{{ $company->name }} Logo" class="h-10 w-10 object-cover">
+                                                @else
+                                                    <img src="{{ asset('storage/' . $company->logo) }}" alt="{{ $company->name }} Logo" class="h-10 w-10 object-cover">
+                                                @endif
                                             @else
                                                 <span class="text-gray-400">No Logo</span>
                                             @endif

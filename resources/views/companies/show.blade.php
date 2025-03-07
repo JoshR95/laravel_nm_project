@@ -41,7 +41,11 @@
                             <h4 class="text-md font-medium mb-2">Company Logo</h4>
                             <div class="bg-gray-100 dark:bg-gray-700 p-4 rounded flex items-center justify-center">
                                 @if($company->logo)
-                                    <img src="{{ asset('storage/' . $company->logo) }}" alt="{{ $company->name }} Logo" class="max-h-48 max-w-full">
+                                    @if(Str::startsWith($company->logo, 'http'))
+                                        <img src="{{ $company->logo }}" alt="{{ $company->name }} Logo" class="max-h-48 max-w-full">
+                                    @else
+                                        <img src="{{ asset('storage/' . $company->logo) }}" alt="{{ $company->name }} Logo" class="max-h-48 max-w-full">
+                                    @endif
                                 @else
                                     <div class="text-gray-400 py-8">No logo available</div>
                                 @endif

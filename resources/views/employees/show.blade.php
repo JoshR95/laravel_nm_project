@@ -50,7 +50,11 @@
                                     @if($employee->company->logo)
                                         <div class="mt-4">
                                             <p class="font-medium mb-2">Company Logo:</p>
-                                            <img src="{{ asset('storage/' . $employee->company->logo) }}" alt="{{ $employee->company->name }} Logo" class="h-16 w-16 object-cover">
+                                            @if(str_starts_with($employee->company->logo, 'http'))
+                                                <img src="{{ $employee->company->logo }}" alt="{{ $employee->company->name }} Logo" class="h-16 w-16 object-cover">
+                                            @else
+                                                <img src="{{ asset('storage/' . $employee->company->logo) }}" alt="{{ $employee->company->name }} Logo" class="h-16 w-16 object-cover">
+                                            @endif
                                         </div>
                                     @endif
                                 </div>
