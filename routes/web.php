@@ -2,10 +2,16 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CompanyController;
+use App\Http\Controllers\EmployeeController;
+use Illuminate\Support\Facades\Auth;
 
+// Redirect the root URL to login or dashboard based on authentication status
 Route::get('/', function () {
-    return view('welcome');
+    if (Auth::check()) {
+        return redirect()->route('dashboard');
+    }
+    return redirect()->route('login');
 });
 
 Route::get('/dashboard', function () {
@@ -18,11 +24,10 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-// Add these new admin routes
-Route::middleware(['auth', 'admin'])->group(function () {
-    Route::get('/admin', function () {
-        return view('admin.dashboard');
-    })->name('admin.dashboard');
+// Admin routes for managing companies and employees
+Route::middleware(['auth'])->group(function () {
+    Route::resource('companies', CompanyController::class);
+    Route::resource('employees', EmployeeController::class);
 });
 
 require __DIR__.'/auth.php';
