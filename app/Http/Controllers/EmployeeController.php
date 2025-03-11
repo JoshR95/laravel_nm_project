@@ -13,7 +13,7 @@ class EmployeeController extends Controller
      */
     public function index()
     {
-        $employees = Employee::with('company')->paginate(10); // Get all employees with their related company information
+        $employees = Employee::with('company')->paginate(9); // show 9 employees per page
         return view('employees.index', compact('employees')); // Return the index view with the employees data
     }
 

@@ -10,7 +10,7 @@ class CompanyController extends Controller
 {
     public function index()
     {
-        $companies = Company::paginate(10); // Gets 10 companies per page
+        $companies = Company::paginate(9); // Gets 9 companies per page
         return view('companies.index', compact('companies')); // Shows them in the index view
     }
     
