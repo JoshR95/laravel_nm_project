@@ -6,22 +6,22 @@
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}">
-                        <x-application-logo class="block h-9 w-auto fill-current text-gray-800" />
+                        <img src="{{ asset('img/initals_2.jpg') }}" alt="Logo" class="h-9 w-auto">
                     </a>
                 </div>
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" class="text-[#124d51]">
                         {{ __('Dashboard') }}
                     </x-nav-link>
                     
                     @if(Auth::user()->isAdmin())
-                        <x-nav-link :href="route('companies.index')" :active="request()->routeIs('companies.*')">
+                        <x-nav-link :href="route('companies.index')" :active="request()->routeIs('companies.*')" class="text-[#124d51]">
                             {{ __('Companies') }}
                         </x-nav-link>
                         
-                        <x-nav-link :href="route('employees.index')" :active="request()->routeIs('employees.*')">
+                        <x-nav-link :href="route('employees.index')" :active="request()->routeIs('employees.*')" class="text-[#124d51]">
                             {{ __('Employees') }}
                         </x-nav-link>
                     @endif

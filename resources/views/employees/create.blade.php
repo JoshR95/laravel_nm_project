@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+        <h2 class="font-semibold text-xl text-white dark:text-gray-200 leading-tight">
             {{ __('Create Employee') }}
         </h2>
     </x-slot>
@@ -59,7 +59,7 @@
                         
                         <div class="flex items-center justify-between mt-6">
                             <a href="{{ route('employees.index') }}" class="text-gray-600 dark:text-gray-400 hover:underline">Cancel</a>
-                            <button type="submit" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Create Employee</button>
+                            <button type="submit" class="px-4 py-2 bg-[#124d51] text-white rounded hover:bg-[#124d51]/80">Create Employee</button>
                         </div>
                     </form>
                 </div>

@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+        <h2 class="font-semibold text-xl text-white dark:text-gray-200 leading-tight">
             {{ __('Employees') }}
         </h2>
     </x-slot>
@@ -11,7 +11,7 @@
                 <div class="p-4 sm:p-6 text-gray-900 dark:text-gray-100">
                     <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-6 gap-4">
                         <h3 class="text-lg font-semibold">Employee List</h3>
-                        <a href="{{ route('employees.create') }}" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 text-center">Add New Employee</a>
+                        <a href="{{ route('employees.create') }}" class="px-4 py-2 bg-[#124d51] text-white rounded hover:bg-[#124d51]/80 text-center">Add New Employee</a>
                     </div>
 
                     @if(session('success'))
@@ -27,7 +27,7 @@
                                 <div class="p-4">
                                     <!-- Profile Icon/Avatar -->
                                     <div class="flex justify-center mb-3">
-                                        <div class="h-20 w-20 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center text-blue-500 dark:text-blue-300">
+                                        <div class="h-20 w-20 bg-[#124d51] dark:bg-blue-900 rounded-full flex items-center justify-center text-white dark:text-blue-300">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                                             </svg>
@@ -61,7 +61,7 @@
                                     </div>
                                     
                                     <!-- Actions -->
-                                    <div class="flex justify-center space-x-2 pt-3 border-t border-gray-200 dark:border-gray-600">
+                                    <div class="flex justify-center space-x-2 pt-3 border-t border-[#124d51] dark:border-gray-600">
                                         <a href="{{ route('employees.show', $employee->id) }}" class="px-3 py-1 bg-blue-100 text-blue-600 rounded hover:bg-blue-200 text-sm">View</a>
                                         <a href="{{ route('employees.edit', $employee->id) }}" class="px-3 py-1 bg-green-100 text-green-600 rounded hover:bg-green-200 text-sm">Edit</a>
                                         <form action="{{ route('employees.destroy', $employee->id) }}" method="POST" class="inline">
