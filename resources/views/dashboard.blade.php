@@ -21,7 +21,7 @@
                                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-white" viewBox="0 0 20 20" fill="currentColor">
                                                 <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
                                             </svg>
-                                            Companies Management
+                                            Companies  Management
                                         </h4>
                                         <p class="text-white dark:text-gray-300 mb-4">Manage all companies in the system. Add new companies, edit existing ones, or remove companies that are no longer needed.</p>
                                         <a href="{{ route('companies.index') }}" class="inline-block px-4 py-2 bg-white text-[#124d51] rounded hover:bg-white/80">Manage Companies</a>
