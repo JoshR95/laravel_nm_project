@@ -10,21 +10,21 @@ export default defineConfig({
         }),
     ],
 
-    // maybe not needed, cpanel fix
-    build: {
-        outDir: 'public/build',
-        manifest: true,
-        rollupOptions: {
-            output: {
-                manualChunks: {}
-            }
-        }
-    },
-    // maybe not needed, cpanel fix
-    server: {
-        https: false,
-        host: true,
-        strictPort: true,
-        port: 5173,
-    }
+    // // maybe not needed, cpanel fix
+    // build: {
+    //     outDir: 'public/build',
+    //     manifest: true,
+    //     rollupOptions: {
+    //         output: {
+    //             manualChunks: {}
+    //         }
+    //     }
+    // },
+    // // maybe not needed, cpanel fix
+    // server: {
+    //     https: false,
+    //     host: true,
+    //     strictPort: true,
+    //     port: 5173,
+    // }
 });
