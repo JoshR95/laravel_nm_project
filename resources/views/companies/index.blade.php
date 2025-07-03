@@ -10,7 +10,7 @@
             <div class="bg-[#124d51] overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-4 sm:p-6 text-gray-900">
                     <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-6 gap-4">
-                        <h3 class="text-lg font-semibold">Company List</h3>
+                        <h3 class="text-lg font-semibold text-white">Company List</h3>
                         <a href="{{ route('companies.create') }}" class="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600 text-center">Add New Company</a>
                     </div>
 

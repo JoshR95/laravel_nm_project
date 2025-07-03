@@ -7,14 +7,14 @@
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900">
+            <div class="bg-[#124d51] overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="p-6 text-white">
                     <form action="{{ route('companies.update', $company) }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
                         
                         <div class="mb-4">
-                            <label for="name" class="block text-sm font-medium text-gray-700">Name <span class="text-red-500">*</span></label>
+                            <label for="name" class="block text-sm font-medium text-white">Name <span class="text-red-500">*</span></label>
                             <input type="text" name="name" id="name" value="{{ old('name', $company->name) }}" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" required>
                             @error('name')
                                 <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
@@ -22,7 +22,7 @@
                         </div>
                         
                         <div class="mb-4">
-                            <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                            <label for="email" class="block text-sm font-medium text-white">Email</label>
                             <input type="email" name="email" id="email" value="{{ old('email', $company->email) }}" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
                             @error('email')
                                 <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
@@ -30,11 +30,11 @@
                         </div>
                         
                         <div class="mb-4">
-                            <label for="logo" class="block text-sm font-medium text-gray-700">Logo (minimum 100×100)</label>
+                            <label for="logo" class="block text-sm font-medium text-white">Logo (minimum 100×100)</label>
                             
                             @if($company->logo)
                                 <div class="mt-2 mb-2">
-                                    <p class="text-sm text-gray-500 mb-1">Current Logo:</p>
+                                    <p class="text-sm text-white mb-1">Current Logo:</p>
                                     @if(Str::startsWith($company->logo, 'http'))
                                         <img src="{{ $company->logo }}" alt="{{ $company->name }} Logo" class="h-20 w-20 object-cover">
                                     @else
@@ -43,15 +43,15 @@
                                 </div>
                             @endif
                             
-                            <input type="file" name="logo" id="logo" class="mt-1 block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-indigo-50 file:text-indigo-700 hover:file:bg-indigo-100">
-                            <p class="text-xs text-gray-500 mt-1">Upload a new logo with minimum dimensions of 100×100 pixels, or leave blank to keep the current logo.</p>
+                            <input type="file" name="logo" id="logo" class="mt-1 block w-full text-sm text-white file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-indigo-50 file:text-indigo-700 hover:file:bg-indigo-100">
+                            <p class="text-xs text-white mt-1">Upload a new logo with minimum dimensions of 100×100 pixels, or leave blank to keep the current logo.</p>
                             @error('logo')
                                 <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
                             @enderror
                         </div>
                         
                         <div class="mb-4">
-                            <label for="website" class="block text-sm font-medium text-gray-700">Website</label>
+                            <label for="website" class="block text-sm font-medium text-white">Website</label>
                             <input type="url" name="website" id="website" value="{{ old('website', $company->website) }}" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" placeholder="https://example.com">
                             @error('website')
                                 <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
@@ -59,7 +59,7 @@
                         </div>
                         
                         <div class="flex items-center justify-between mt-6">
-                            <a href="{{ route('companies.show', $company) }}" class="text-gray-600 hover:underline">Cancel</a>
+                            <a href="{{ route('companies.show', $company) }}" class="text-white hover:underline">Cancel</a>
                             <button type="submit" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Update Company</button>
                         </div>
                     </form>

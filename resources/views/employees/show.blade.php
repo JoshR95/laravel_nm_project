@@ -7,8 +7,8 @@
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900">
+            <div class="bg-[#124d51] overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="p-6 text-white">
                     <div class="flex justify-between mb-6">
                         <h3 class="text-lg font-semibold">{{ $employee->first_name }} {{ $employee->last_name }}</h3>
                         <div>
@@ -17,39 +17,39 @@
                         </div>
                     </div>
 
-                    <div class="bg-gray-100 p-6 rounded">
+                    <div class="bg-white p-6 rounded">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
-                                <h4 class="text-md font-medium mb-2">Personal Information</h4>
-                                <div class="bg-white p-4 rounded shadow">
-                                    <p class="mb-2"><span class="font-medium">ID:</span> {{ $employee->id }}</p>
-                                    <p class="mb-2"><span class="font-medium">First Name:</span> {{ $employee->first_name }}</p>
-                                    <p class="mb-2"><span class="font-medium">Last Name:</span> {{ $employee->last_name }}</p>
-                                    <p class="mb-2"><span class="font-medium">Email:</span> {{ $employee->email ?? 'N/A' }}</p>
-                                    <p class="mb-2"><span class="font-medium">Phone:</span> {{ $employee->phone ?? 'N/A' }}</p>
+                                <h4 class="text-md font-medium mb-2 text-[#124d51]">Personal Information</h4>
+                                <div class="bg-[#124d51] p-4 rounded shadow">
+                                    <p class="mb-2"><span class="font-medium text-white">ID:</span> {{ $employee->id }}</p>
+                                    <p class="mb-2"><span class="font-medium text-white">First Name:</span> {{ $employee->first_name }}</p>
+                                    <p class="mb-2"><span class="font-medium text-white">Last Name:</span> {{ $employee->last_name }}</p>
+                                    <p class="mb-2"><span class="font-medium text-white">Email:</span> {{ $employee->email ?? 'N/A' }}</p>
+                                    <p class="mb-2"><span class="font-medium text-white">Phone:</span> {{ $employee->phone ?? 'N/A' }}</p>
                                 </div>
                             </div>
 
                             <div>
-                                <h4 class="text-md font-medium mb-2">Company Information</h4>
-                                <div class="bg-white p-4 rounded shadow">
-                                    <p class="mb-2"><span class="font-medium">Company:</span> 
-                                        <a href="{{ route('companies.show', $employee->company) }}" class="text-blue-500 hover:underline">
+                                <h4 class="text-md font-medium mb-2 text-[#124d51]">Company Information</h4>
+                                <div class="bg-[#124d51] p-4 rounded shadow">
+                                    <p class="mb-2"><span class="font-medium text-white">Company:</span> 
+                                        <a href="{{ route('companies.show', $employee->company) }}" class="text-blue-200 hover:underline">
                                             {{ $employee->company->name }}
                                         </a>
                                     </p>
-                                    <p class="mb-2"><span class="font-medium">Company Email:</span> {{ $employee->company->email ?? 'N/A' }}</p>
+                                    <p class="mb-2"><span class="font-medium text-white">Company Email:</span> {{ $employee->company->email ?? 'N/A' }}</p>
                                     <p class="mb-2">
-                                        <span class="font-medium">Company Website:</span> 
+                                        <span class="font-medium text-white">Company Website:</span> 
                                         @if($employee->company->website)
-                                            <a href="{{ $employee->company->website }}" target="_blank" class="text-blue-500 hover:underline">{{ $employee->company->website }}</a>
+                                            <a href="{{ $employee->company->website }}" target="_blank" class="text-blue-200 hover:underline">{{ $employee->company->website }}</a>
                                         @else
-                                            N/A
+                                            <span class="text-white">N/A</span>
                                         @endif
                                     </p>
                                     @if($employee->company->logo)
                                         <div class="mt-4">
-                                            <p class="font-medium mb-2">Company Logo:</p>
+                                            <p class="font-medium mb-2 text-white">Company Logo:</p>
                                             @if(str_starts_with($employee->company->logo, 'http'))
                                                 <img src="{{ $employee->company->logo }}" alt="{{ $employee->company->name }} Logo" class="h-16 w-16 object-cover">
                                             @else
@@ -62,10 +62,10 @@
                         </div>
 
                         <div class="mt-6">
-                            <h4 class="text-md font-medium mb-2">Additional Information</h4>
-                            <div class="bg-white p-4 rounded shadow">
-                                <p class="mb-2"><span class="font-medium">Created:</span> {{ $employee->created_at->format('F d, Y') }}</p>
-                                <p><span class="font-medium">Last Updated:</span> {{ $employee->updated_at->format('F d, Y') }}</p>
+                            <h4 class="text-md font-medium mb-2 text-[#124d51]">Additional Information</h4>
+                            <div class="bg-[#124d51] p-4 rounded shadow">
+                                <p class="mb-2"><span class="font-medium text-white">Created:</span> {{ $employee->created_at->format('F d, Y') }}</p>
+                                <p><span class="font-medium text-white">Last Updated:</span> {{ $employee->updated_at->format('F d, Y') }}</p>
                             </div>
                         </div>
                     </div>

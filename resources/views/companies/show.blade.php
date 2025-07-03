@@ -7,8 +7,8 @@
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900">
+            <div class="bg-[#124d51] overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="p-6 text-white">
                     <div class="flex justify-between mb-6">
                         <h3 class="text-lg font-semibold">{{ $company->name }}</h3>
                         <div>
@@ -19,27 +19,27 @@
 
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
-                            <h4 class="text-md font-medium mb-2">Company Information</h4>
-                            <div class="bg-gray-100 p-4 rounded">
-                                <p class="mb-2"><span class="font-medium">ID:</span> {{ $company->id }}</p>
-                                <p class="mb-2"><span class="font-medium">Name:</span> {{ $company->name }}</p>
-                                <p class="mb-2"><span class="font-medium">Email:</span> {{ $company->email ?? 'N/A' }}</p>
-                                <p class="mb-2">
-                                    <span class="font-medium">Website:</span> 
+                            <h4 class="text-md font-medium mb-2 text-white">Company Information</h4>
+                            <div class="bg-white p-4 rounded">
+                                <p class="mb-2 text-[#124d51]"><span class="font-medium text-[#124d51]">ID:</span> {{ $company->id }}</p>
+                                <p class="mb-2 text-[#124d51]"><span class="font-medium text-[#124d51]">Name:</span> {{ $company->name }}</p>
+                                <p class="mb-2 text-[#124d51]"><span class="font-medium text-[#124d51]">Email:</span> {{ $company->email ?? 'N/A' }}</p>
+                                <p class="mb-2 text-[#124d51]">
+                                    <span class="font-medium text-[#124d51]">Website:</span> 
                                     @if($company->website)
                                         <a href="{{ $company->website }}" target="_blank" class="text-blue-500 hover:underline">{{ $company->website }}</a>
                                     @else
-                                        N/A
+                                        <span class="text-[#124d51]">N/A</span>
                                     @endif
                                 </p>
-                                <p class="mb-2"><span class="font-medium">Created:</span> {{ $company->created_at->format('F d, Y') }}</p>
-                                <p><span class="font-medium">Last Updated:</span> {{ $company->updated_at->format('F d, Y') }}</p>
+                                <p class="mb-2 text-[#124d51]"><span class="font-medium text-[#124d51]">Created:</span> {{ $company->created_at->format('F d, Y') }}</p>
+                                <p class="text-[#124d51]"><span class="font-medium text-[#124d51]">Last Updated:</span> {{ $company->updated_at->format('F d, Y') }}</p>
                             </div>
                         </div>
 
                         <div>
-                            <h4 class="text-md font-medium mb-2">Company Logo</h4>
-                            <div class="bg-gray-100 p-4 rounded flex items-center justify-center">
+                            <h4 class="text-md font-medium mb-2 text-white">Company Logo</h4>
+                            <div class="bg-white p-4 rounded flex items-center justify-center">
                                 @if($company->logo)
                                     @if(Str::startsWith($company->logo, 'http'))
                                         <img src="{{ $company->logo }}" alt="{{ $company->name }} Logo" class="max-h-48 max-w-full">
@@ -47,36 +47,36 @@
                                         <img src="{{ asset('storage/' . $company->logo) }}" alt="{{ $company->name }} Logo" class="max-h-48 max-w-full">
                                     @endif
                                 @else
-                                    <div class="text-gray-400 py-8">No logo available</div>
+                                    <div class="text-white py-8">No logo available</div>
                                 @endif
                             </div>
                         </div>
                     </div>
 
                     <div class="mt-8">
-                        <h4 class="text-md font-medium mb-2">Employees</h4>
-                        <div class="bg-gray-100 p-4 rounded">
+                        <h4 class="text-md font-medium mb-2 text-white">Employees</h4>
+                        <div class="bg-white p-4 rounded">
                             @if($company->employees->count() > 0)
                                 <div class="overflow-x-auto">
-                                    <table class="min-w-full bg-white border border-gray-300">
+                                    <table class="min-w-full bg-[#124d51] border border-gray-300">
                                         <thead>
                                             <tr>
-                                                <th class="px-6 py-3 border-b border-gray-300 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">ID</th>
-                                                <th class="px-6 py-3 border-b border-gray-300 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
-                                                <th class="px-6 py-3 border-b border-gray-300 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Email</th>
-                                                <th class="px-6 py-3 border-b border-gray-300 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Phone</th>
-                                                <th class="px-6 py-3 border-b border-gray-300 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+                                                <th class="px-6 py-3 border-b border-gray-300 text-left text-xs font-medium text-white uppercase tracking-wider">ID</th>
+                                                <th class="px-6 py-3 border-b border-gray-300 text-left text-xs font-medium text-white uppercase tracking-wider">Name</th>
+                                                <th class="px-6 py-3 border-b border-gray-300 text-left text-xs font-medium text-white uppercase tracking-wider">Email</th>
+                                                <th class="px-6 py-3 border-b border-gray-300 text-left text-xs font-medium text-white uppercase tracking-wider">Phone</th>
+                                                <th class="px-6 py-3 border-b border-gray-300 text-left text-xs font-medium text-white uppercase tracking-wider">Actions</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             @foreach($company->employees as $employee)
                                                 <tr>
-                                                    <td class="px-6 py-4 whitespace-nowrap border-b border-gray-300">{{ $employee->id }}</td>
-                                                    <td class="px-6 py-4 whitespace-nowrap border-b border-gray-300">{{ $employee->first_name }} {{ $employee->last_name }}</td>
-                                                    <td class="px-6 py-4 whitespace-nowrap border-b border-gray-300">{{ $employee->email ?? 'N/A' }}</td>
-                                                    <td class="px-6 py-4 whitespace-nowrap border-b border-gray-300">{{ $employee->phone ?? 'N/A' }}</td>
+                                                    <td class="px-6 py-4 whitespace-nowrap border-b border-gray-300 text-white">{{ $employee->id }}</td>
+                                                    <td class="px-6 py-4 whitespace-nowrap border-b border-gray-300 text-white">{{ $employee->first_name }} {{ $employee->last_name }}</td>
+                                                    <td class="px-6 py-4 whitespace-nowrap border-b border-gray-300 text-white">{{ $employee->email ?? 'N/A' }}</td>
+                                                    <td class="px-6 py-4 whitespace-nowrap border-b border-gray-300 text-white">{{ $employee->phone ?? 'N/A' }}</td>
                                                     <td class="px-6 py-4 whitespace-nowrap border-b border-gray-300 text-sm">
-                                                        <a href="{{ route('employees.show', $employee) }}" class="text-blue-500 hover:underline mr-2">View</a>
+                                                        <a href="{{ route('employees.show', $employee) }}" class="text-blue-200 hover:underline mr-2">View</a>
                                                     </td>
                                                 </tr>
                                             @endforeach
@@ -84,7 +84,7 @@
                                     </table>
                                 </div>
                             @else
-                                <p class="text-gray-500">No employees found for this company.</p>
+                                <p class="text-white">No employees found for this company.</p>
                             @endif
                         </div>
                     </div>
