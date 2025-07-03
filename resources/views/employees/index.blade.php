@@ -8,10 +8,10 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-[#124d51] overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-4 sm:p-6 text-gray-900">
+                <div class="p-4 sm:p-6 text-white">
                     <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-6 gap-4">
                         <h3 class="text-lg font-semibold">Employee List</h3>
-                        <a href="{{ route('employees.create') }}" class="px-4 py-2 bg-[#124d51] text-white rounded hover:bg-[#124d51]/80 text-center">Add New Employee</a>
+                        <a href="{{ route('employees.create') }}" class="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600 text-center">Add New Employee</a>
                     </div>
 
                     @if(session('success'))
@@ -36,11 +36,11 @@
                                     
                                     <!-- Employee Info -->
                                     <div class="text-center mb-4">
-                                        <h4 class="text-lg font-semibold text-gray-800 truncate" title="{{ $employee->first_name }} {{ $employee->last_name }}">
+                                        <h4 class="text-lg font-semibold text-[#124d51] truncate" title="{{ $employee->first_name }} {{ $employee->last_name }}">
                                             {{ $employee->first_name }} {{ $employee->last_name }}
                                         </h4>
                                         
-                                        <div class="mt-2 text-sm text-gray-600">
+                                        <div class="mt-2 text-sm text-[#124d51]">
                                             <p class="mb-1">
                                                 <span class="font-medium">Company:</span> 
                                                 <a href="{{ route('companies.show', $employee->company) }}" class="text-blue-500 hover:underline">
@@ -73,7 +73,7 @@
                                 </div>
                             </div>
                         @empty
-                            <div class="col-span-full p-6 text-center text-gray-500">
+                            <div class="col-span-full p-6 text-center text-[#124d51]">
                                 No employees found. Click "Add New Employee" to create one.
                             </div>
                         @endforelse

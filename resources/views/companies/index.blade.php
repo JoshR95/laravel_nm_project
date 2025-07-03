@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-white dark:text-gray-200 leading-tight">
+        <h2 class="font-semibold text-xl text-white leading-tight">
             {{ __('Companies') }}
         </h2>
     </x-slot>
@@ -8,10 +8,10 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-[#124d51] overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-4 sm:p-6 text-gray-900 dark:text-gray-100">
+                <div class="p-4 sm:p-6 text-gray-900">
                     <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-6 gap-4">
                         <h3 class="text-lg font-semibold">Company List</h3>
-                        <a href="{{ route('companies.create') }}" class="px-4 py-2 bg-[#124d51] text-white rounded hover:bg-[#124d51]/80 text-center">Add New Company</a>
+                        <a href="{{ route('companies.create') }}" class="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600 text-center">Add New Company</a>
                     </div>
 
                     @if(session('success'))
@@ -23,7 +23,7 @@
                     <!-- Grid Layout for Companies -->
                     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
                         @forelse($companies as $company)
-                            <div class="bg-white border-gray-200 dark:border-gray-600 rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-shadow duration-200">
+                            <div class="bg-white border-gray-200 rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-shadow duration-200">
                                 <div class="p-4">
                                     <!-- Logo -->
                                     <div class="flex justify-center mb-3">
@@ -34,7 +34,7 @@
                                                 <img src="{{ asset('storage/' . $company->logo) }}" alt="{{ $company->name }} Logo" class="h-24 w-24 object-cover rounded">
                                             @endif
                                         @else
-                                            <div class="h-24 w-24 bg-gray-200 dark:bg-gray-600 rounded flex items-center justify-center">
+                                            <div class="h-24 w-24 bg-gray-200 rounded flex items-center justify-center">
                                                 <span class="text-[#124d51]">No Logo</span>
                                             </div>
                                         @endif
@@ -54,7 +54,7 @@
                                     </div>
                                     
                                     <!-- Actions -->
-                                    <div class="flex justify-center space-x-2 pt-3 border-t border-[#124d51] dark:border-gray-600">
+                                    <div class="flex justify-center space-x-2 pt-3 border-t border-[#124d51]">
                                         <a href="{{ route('companies.show', $company->id) }}" class="px-3 py-1 bg-blue-100 text-blue-600 rounded hover:bg-blue-200 text-sm">View</a>
                                         <a href="{{ route('companies.edit', $company->id) }}" class="px-3 py-1 bg-green-100 text-green-600 rounded hover:bg-green-200 text-sm">Edit</a>
                                         <form action="{{ route('companies.destroy', $company->id) }}" method="POST" class="inline">
@@ -66,7 +66,7 @@
                                 </div>
                             </div>
                         @empty
-                            <div class="col-span-full p-6 text-center text-gray-500 dark:text-gray-400">
+                            <div class="col-span-full p-6 text-center text-gray-500">
                                 No companies found. Click "Add New Company" to create one.
                             </div>
                         @endforelse

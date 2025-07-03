@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot name="header" >
-        <h2 class="font-semibold text-xl text-white dark:text-gray-200 leading-tight">
+        <h2 class="font-semibold text-xl text-white leading-tight">
             {{ __('Dashboard') }}
         </h2>
     </x-slot>
@@ -44,11 +44,11 @@
                                     <div class="bg-white p-4 rounded-lg shadow">
                                         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-2">
                                             <div class="bg-[#124d51] p-4 rounded shadow">
-                                                <h5 class="text-sm font-medium text-gray-500 dark:text-gray-300 mb-1">Total Companies</h5>
+                                                <h5 class="text-sm font-medium text-white mb-1">Total Companies</h5>
                                                 <p class="text-2xl font-bold">{{ \App\Models\Company::count() }}</p>
                                             </div>
                                             <div class="bg-[#124d51] p-4 rounded shadow">
-                                                <h5 class="text-sm font-medium text-gray-500 dark:text-gray-300 mb-1">Total Employees</h5>
+                                                <h5 class="text-sm font-medium text-white mb-1">Total Employees</h5>
                                                 <p class="text-2xl font-bold">{{ \App\Models\Employee::count() }}</p>
                                             </div>
                                         </div>
