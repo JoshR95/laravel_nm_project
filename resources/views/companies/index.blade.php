@@ -7,7 +7,7 @@
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
+            <div class="bg-[#124d51] overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-4 sm:p-6 text-gray-900 dark:text-gray-100">
                     <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-6 gap-4">
                         <h3 class="text-lg font-semibold">Company List</h3>
@@ -23,7 +23,7 @@
                     <!-- Grid Layout for Companies -->
                     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
                         @forelse($companies as $company)
-                            <div class="bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-shadow duration-200">
+                            <div class="bg-white border-gray-200 dark:border-gray-600 rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-shadow duration-200">
                                 <div class="p-4">
                                     <!-- Logo -->
                                     <div class="flex justify-center mb-3">
@@ -35,15 +35,15 @@
                                             @endif
                                         @else
                                             <div class="h-24 w-24 bg-gray-200 dark:bg-gray-600 rounded flex items-center justify-center">
-                                                <span class="text-gray-400">No Logo</span>
+                                                <span class="text-[#124d51]">No Logo</span>
                                             </div>
                                         @endif
                                     </div>
                                     
                                     <!-- Company Info -->
                                     <div class="text-center mb-4">
-                                        <h4 class="text-lg font-semibold text-gray-800 dark:text-gray-200 truncate" title="{{ $company->name }}">{{ $company->name }}</h4>
-                                        <p class="text-sm text-gray-600 dark:text-gray-400 mt-1 truncate" title="{{ $company->email ?? 'No email available' }}">
+                                        <h4 class="text-lg font-semibold text-[#124d51] truncate" title="{{ $company->name }}">{{ $company->name }}</h4>
+                                        <p class="text-sm text-[#124d51] mt-1 truncate" title="{{ $company->email ?? 'No email available' }}">
                                             {{ $company->email ?? 'No email available' }}
                                         </p>
                                         @if($company->website)

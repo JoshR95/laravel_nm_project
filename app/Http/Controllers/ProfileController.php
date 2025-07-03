@@ -16,9 +16,12 @@ class ProfileController extends Controller
      */
     public function edit(Request $request): View
     {
-        return view('profile.edit', [
-            'user' => $request->user(),
-        ]);
+        // Block access for demo
+        abort(403, 'Profile access is disabled for this demo.');
+        // ** UNCOMMENT THIS TO ADD BACK THE PROFILE EDIT PAGE
+        // return view('profile.edit', [
+        //     'user' => $request->user(),
+        // ]);
     }
 
     /**
@@ -26,15 +29,15 @@ class ProfileController extends Controller
      */
     public function update(ProfileUpdateRequest $request): RedirectResponse
     {
-        $request->user()->fill($request->validated());
-
-        if ($request->user()->isDirty('email')) {
-            $request->user()->email_verified_at = null;
-        }
-
-        $request->user()->save();
-
-        return Redirect::route('profile.edit')->with('status', 'profile-updated');
+        // Block access for demo
+        abort(403, 'Profile access is disabled for this demo.');
+        // $request->user()->fill($request->validated());
+        // ** UNCOMMENT THIS TO ADD BACK THE PROFILE EDIT PAGE
+        // if ($request->user()->isDirty('email')) {
+        //     $request->user()->email_verified_at = null;
+        // }
+        // $request->user()->save();
+        // return Redirect::route('profile.edit')->with('status', 'profile-updated');
     }
 
     /**
@@ -42,19 +45,17 @@ class ProfileController extends Controller
      */
     public function destroy(Request $request): RedirectResponse
     {
-        $request->validateWithBag('userDeletion', [
-            'password' => ['required', 'current_password'],
-        ]);
-
-        $user = $request->user();
-
-        Auth::logout();
-
-        $user->delete();
-
-        $request->session()->invalidate();
-        $request->session()->regenerateToken();
-
-        return Redirect::to('/');
+        // Block access for demo
+        abort(403, 'Profile access is disabled for this demo.');
+        // ** UNCOMMENT THIS TO ADD BACK THE PROFILE EDIT PAGE
+        // $request->validateWithBag('userDeletion', [
+        //     'password' => ['required', 'current_password'],
+        // ]);
+        // $user = $request->user();
+        // Auth::logout();
+        // $user->delete();
+        // $request->session()->invalidate();
+        // $request->session()->regenerateToken();
+        // return Redirect::to('/');
     }
 }

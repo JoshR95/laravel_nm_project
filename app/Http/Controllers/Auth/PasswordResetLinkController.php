@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Password;
@@ -28,6 +29,13 @@ class PasswordResetLinkController extends Controller
         $request->validate([
             'email' => ['required', 'email'],
         ]);
+
+        // Check if the email belongs to an admin user
+        $user = User::where('email', $request->email)->first();
+        if ($user && $user->isAdmin()) {
+            // Return a funny popup message for admin users
+            return back()->with('status', 'Nice try! 😄 Password reset is disabled for admin accounts.');
+        }
 
         // We will send the password reset link to this user. Once we have attempted
         // to send the link, we will examine the response then see the message we

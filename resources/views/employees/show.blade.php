@@ -1,14 +1,14 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-white dark:text-gray-200 leading-tight">
+        <h2 class="font-semibold text-xl text-white leading-tight">
             {{ __('Employee Details') }}
         </h2>
     </x-slot>
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900 dark:text-gray-100">
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="p-6 text-gray-900">
                     <div class="flex justify-between mb-6">
                         <h3 class="text-lg font-semibold">{{ $employee->first_name }} {{ $employee->last_name }}</h3>
                         <div>
@@ -17,11 +17,11 @@
                         </div>
                     </div>
 
-                    <div class="bg-gray-100 dark:bg-gray-700 p-6 rounded">
+                    <div class="bg-gray-100 p-6 rounded">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
                                 <h4 class="text-md font-medium mb-2">Personal Information</h4>
-                                <div class="bg-white dark:bg-gray-600 p-4 rounded shadow">
+                                <div class="bg-white p-4 rounded shadow">
                                     <p class="mb-2"><span class="font-medium">ID:</span> {{ $employee->id }}</p>
                                     <p class="mb-2"><span class="font-medium">First Name:</span> {{ $employee->first_name }}</p>
                                     <p class="mb-2"><span class="font-medium">Last Name:</span> {{ $employee->last_name }}</p>
@@ -32,7 +32,7 @@
 
                             <div>
                                 <h4 class="text-md font-medium mb-2">Company Information</h4>
-                                <div class="bg-white dark:bg-gray-600 p-4 rounded shadow">
+                                <div class="bg-white p-4 rounded shadow">
                                     <p class="mb-2"><span class="font-medium">Company:</span> 
                                         <a href="{{ route('companies.show', $employee->company) }}" class="text-blue-500 hover:underline">
                                             {{ $employee->company->name }}
@@ -63,7 +63,7 @@
 
                         <div class="mt-6">
                             <h4 class="text-md font-medium mb-2">Additional Information</h4>
-                            <div class="bg-white dark:bg-gray-600 p-4 rounded shadow">
+                            <div class="bg-white p-4 rounded shadow">
                                 <p class="mb-2"><span class="font-medium">Created:</span> {{ $employee->created_at->format('F d, Y') }}</p>
                                 <p><span class="font-medium">Last Updated:</span> {{ $employee->updated_at->format('F d, Y') }}</p>
                             </div>
