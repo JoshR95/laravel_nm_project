@@ -44,4 +44,9 @@
             </x-primary-button>
         </div>
     </form>
+    <div class="mt-6 bg-[#14575c] text-white text-center p-6 rounded shadow max-w-md mx-auto" style="width: 100%;">
+        <p class="font-semibold mb-2">This is a demo MVC site, the login credentials are:</p>
+        <div class="mb-1">email: <span class="font-mono">admin@admin</span></div>
+        <div>password: <span class="font-mono">password</span></div>
+    </div>
 </x-guest-layout>
